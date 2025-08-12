@@ -51,7 +51,7 @@ class Queue {
 }
 
 
-const q=new Queue()
+const q = new Queue()
 q.enqueue(1)
 q.enqueue(2)
 q.enqueue(3)
@@ -59,15 +59,15 @@ q.enqueue(4)
 q.enqueue(5)
 q.print()
 
-function reverseQueue(queue){
+function reverseQueue(queue) {
     const stack = new Stack()
-    while(!queue.isEmpty()){
+    while (!queue.isEmpty()) {
         stack.push(queue.dequeue())
     }
 
-    while(!stack.isEmpty()){
+    while (!stack.isEmpty()) {
         queue.enqueue(stack.pop())
     }
-    }
-reverseQueue(q)    
+}
+reverseQueue(q)
 q.print()

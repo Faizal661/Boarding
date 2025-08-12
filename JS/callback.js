@@ -7,7 +7,7 @@ function fetchData(callback) {
         if (!success) {
             callback(new Error('falied to fetch'))
         } else {
-            callback(null, console.log('succcess'))
+            callback(null, 'succcess')
         }
     }, 1000)
 }
@@ -16,7 +16,7 @@ function fetchData(callback) {
 fetchData((error, data) => {
     if (error) {
         console.log(error)
-        return
+    } else {
+        console.log(data)
     }
-    console.log(data)
 })

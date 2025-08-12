@@ -1,9 +1,13 @@
-import CommentSection from "./pages/CommentSection";
+// import CommentSection from "./components/CommentSection";
+import ParentComponent from "./components/childToParent";
+import ToggleChceckbox from "./components/ToggleChceckbox";
 
 function App() {
   return (
     <>
-      <CommentSection />
+      {/* <CommentSection /> */}
+      <ParentComponent />
+      <ToggleChceckbox />
     </>
   );
 }

@@ -37,3 +37,4 @@ console.log(proxy.name='fa'); // Logs: Property 'name' was accessed. Output: Fai
 console.log(proxy.name); // Logs: Property 'name' was accessed. Output: Faizal
 console.log(proxy.age);  // Logs: Property 'age' was accessed. Output: 25
 console.log(proxy.gender); // Logs: Property 'gender' was accessed. Output: Property does not exist
+

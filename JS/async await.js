@@ -31,7 +31,7 @@ async function fetchDataAsync() {
         console.log(data);
     } catch (error) {
         console.error(error);
-    }finally{
+    } finally {
         console.log('end..')
     }
 }
