@@ -1,10 +1,8 @@
 Indexes in MongoDB are special data structures that store a small portion of the dataset in a form that's easy to traverse. They improve the speed of query operations by providing efficient ways to locate and access data. Without indexes, MongoDB must perform a collection scan to find matching documents, which can be slow for large datasets.
 
-Here’s a comprehensive guide to indexes in MongoDB:
 
----
+Types of Indexes
 
-### **Types of Indexes**
 1. **Single Field Index**
    - Default index on the `_id` field.
    - Can be created on any single field to speed up queries.
@@ -58,9 +56,9 @@ Here’s a comprehensive guide to indexes in MongoDB:
      db.collection.createIndex({ "$**": 1 })
      ```
 
----
 
-### **Creating Indexes**
+Creating Indexes
+
 1. **Explicitly Create an Index**
    ```javascript
    db.collection.createIndex({ fieldName: 1 })
@@ -84,9 +82,8 @@ Here’s a comprehensive guide to indexes in MongoDB:
    db.collection.createIndex({ fieldName: 1 }, { expireAfterSeconds: 3600 })
    ```
 
----
+Listing and Dropping Indexes
 
-### **Listing and Dropping Indexes**
 1. **List All Indexes**
    ```javascript
    db.collection.getIndexes()
@@ -102,9 +99,9 @@ Here’s a comprehensive guide to indexes in MongoDB:
    db.collection.dropIndexes()
    ```
 
----
+Best Practices
 
-### **Best Practices**
+
 1. Index fields frequently used in queries (filtering, sorting, and joining).
 2. Use compound indexes wisely to match your query patterns.
 3. Avoid over-indexing; each index consumes storage and slows down write operations.
