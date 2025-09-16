@@ -8,6 +8,7 @@ In JavaScript, `call`, `apply`, and `bind` are methods used to control the **`th
 
 #### Example:
 ```javascript
+
 function greet(greeting, punctuation) {
   console.log(`${greeting}, ${this.name}${punctuation}`);
 }

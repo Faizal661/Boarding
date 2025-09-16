@@ -5,6 +5,9 @@ const person = {
   
   // console.log(person.name);
   // console.log({...person,name:'hi'})
+
+
+
   const arr = [1,2,4]
 
   const arr1 = [...arr,90,{name:'ui'},()=>console.log("Hello"),(a)=> a]
@@ -18,6 +21,7 @@ const person = {
 
 
 
-// let str= undefined
-// console.log(String(str))
-// console.log(str.toString())
+let str= undefined
+let str2=String(str)
+console.log(str2)
+console.log(str.toString())

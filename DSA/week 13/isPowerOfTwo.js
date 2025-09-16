@@ -13,4 +13,8 @@ function isPowerOfTwo(n) {
 
 console.log(isPowerOfTwo(1))
 console.log(isPowerOfTwo(2))
+console.log(isPowerOfTwo(4))
 console.log(isPowerOfTwo(5))
+console.log(isPowerOfTwo(8))
+console.log(isPowerOfTwo(12))
+console.log(isPowerOfTwo(16))

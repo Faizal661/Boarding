@@ -50,7 +50,7 @@ const name = 'Mohammed Faizal T'
 
 
 
-// const map=numbers.map((sum,curr)=>curr+sum,0)
+// const map=numbers.map((curr)=>curr*2)
 // console.log(numbers)
 // console.log(map)
 
@@ -63,22 +63,20 @@ const numbers2 = [1, 3, 5, 7, 9]
 
 const result = []
 const unique = {}
+
 for (let i = 0; i < numbers.length; i++) {
-    if (!unique[numbers[i]]) {
-        unique[numbers[i]] = 1
-    }else {
-        unique[numbers[i]]++
-    }
+    unique[numbers[i]] = (unique[numbers[i]]||0)+1
 }
 
 for (let i = 0; i < numbers2.length; i++) {
-    if (!unique[numbers2[i]]) {
-        unique[numbers2[i]] = 1
-    } else {
-        unique[numbers2[i]]++
-    }
+    unique[numbers2[i]] = (unique[numbers2[i]]||0)+1
 }
+
 console.log(unique)
+
+// for( let [k,v] of Object.entries(unique)){
+//     if(v===1)result.push(parseInt(k))
+// }
 
 for (let key in unique) {
     if (unique[key] === 1) {
