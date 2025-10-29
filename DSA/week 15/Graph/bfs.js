@@ -16,7 +16,6 @@ function bfs(graph, startNode) {
     }
 }
 
-
 const graph = {
     A: ['B', 'C'],
     B: ['D', 'E'],
