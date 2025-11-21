@@ -1,4 +1,3 @@
-Here is the content of the MongoDB Command Line Utilities Cheatsheet, provided in standard Markdown text format for easy viewing and copying:
 
 # 📚 MongoDB Command Line Utilities Cheatsheet
 
