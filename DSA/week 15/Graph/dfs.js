@@ -1,14 +1,3 @@
-function dfs(graph, startNode, visited = new Set()) {
-    visited.add(startNode);
-    console.log(startNode);
-
-    for (const neighbor of graph[startNode]) {
-        if (!visited.has(neighbor)) {
-            dfs(graph, neighbor, visited);
-        }
-    }
-}
-
 const graph = {
     A: ['B', 'C'],
     B: ['D', 'E'],
@@ -18,4 +7,16 @@ const graph = {
     F: []
 };
 
-dfs(graph, 'A');
+function dfs(startNode, visited = new Set()) {
+    visited.add(startNode);
+    console.log(startNode);
+
+    for (const neighbor of graph[startNode]) {
+        if (!visited.has(neighbor)) {
+            dfs(neighbor, visited);
+        }
+    }
+}
+
+
+dfs('A');

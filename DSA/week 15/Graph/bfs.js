@@ -1,4 +1,13 @@
-function bfs(graph, startNode) {
+const graph = {
+    A: ['B', 'C'],
+    B: ['D', 'E'],
+    C: ['F'],
+    D: [],
+    E: ['F'],
+    F: []
+};
+
+function bfs(startNode) {
     const queue = [startNode];
     const visited = new Set();
     visited.add(startNode);
@@ -16,13 +25,5 @@ function bfs(graph, startNode) {
     }
 }
 
-const graph = {
-    A: ['B', 'C'],
-    B: ['D', 'E'],
-    C: ['F'],
-    D: [],
-    E: ['F'],
-    F: []
-};
 
-bfs(graph, 'A');
+bfs('A');
