@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { formatDate } from "../utilities/formatDate";
+import { formatDate } from "../../utilities/formatDate";
 
 interface Icomment {
   text: string;
@@ -13,7 +13,7 @@ const CommentSection = () => {
   const [commentText, setComment] = useState<string>("");
   const [parentId, setParentId] = useState<number | null>(null);
   const [replies, setReplies] = useState<Icomment[]>([]);
-  const [showRepliesOfId,setShowRepliesOfId]= useState<number | null>(null);
+  const [showRepliesOfId, setShowRepliesOfId] = useState<number | null>(null);
 
   const handleCommentSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -44,10 +44,10 @@ const CommentSection = () => {
   const toggleHandleShowReplies = (e: React.FormEvent, parentId: number) => {
     e.preventDefault();
 
-    if(showRepliesOfId===null || showRepliesOfId!==parentId){
-      setShowRepliesOfId(parentId)
-    }else{
-      setShowRepliesOfId(null)
+    if (showRepliesOfId === null || showRepliesOfId !== parentId) {
+      setShowRepliesOfId(parentId);
+    } else {
+      setShowRepliesOfId(null);
     }
   };
 
