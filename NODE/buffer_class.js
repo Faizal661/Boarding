@@ -46,7 +46,7 @@ const buf5 = Buffer.from(str);
 // Reading files
 const fs = require('fs');
 
-fs.readFile('example.txt', (err, buffer) => {
+fs.readFile('./server.js', (err, buffer) => {
     console.log(buffer); // <Buffer 48 65 6c 6c 6f>
     console.log(buffer.toString()); // Contents of file
 });

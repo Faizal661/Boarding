@@ -1,10 +1,13 @@
-const { exec, spawn, fork, execFile } = require('child_process');
-// The child_process module in Node.js allows you to create and control child processes, enabling you to execute system commands, run scripts, or spawn other programs from your Node.js application.
+// The child_process module in Node.js allows you to create and control child processes,
+// enabling you to
+// 1. execute system commands,
+// 2. run scripts,
+// 3. spawn other programs from your Node.js application.
 // interact with the underlying operating system or external tools.
 
+const { exec, spawn, fork, execFile } = require('child_process');
 
 // Executes a command in a shell and buffers the output.
-
 
 // exec('dir', (error, stdout, stderr) => {
 //     if (error) {
