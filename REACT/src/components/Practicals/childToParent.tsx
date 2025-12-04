@@ -8,7 +8,7 @@ function ParentComponent() {
   };
 
   return (
-    <div className="border-2 p-4 m-4 ">
+    <div className="border-2 p-4 m-4">
       <h1>Parent Component</h1>
       <p className="bg-red-400 w-fit"> {message}</p>
       <ChildComponent onDataSend={handleChildData} />

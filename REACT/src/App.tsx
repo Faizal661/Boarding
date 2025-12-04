@@ -1,19 +1,13 @@
-// import CommentSection from "./components/CommentSection";
-// import ParentComponent from "./components/childToParent";
-// import ToggleChceckbox from "./components/ToggleChceckbox";
-// import XssDemo from "./components/XssDemo";
-// import HOC from "./components/HOC";
-import Hooks from "./pages/Hooks";
+import Practicals from "./pages/Practicals";
+// import Hooks from "./pages/Hooks";
+import Basics from "./pages/Basics";
 
 function App() {
   return (
     <>
-      {/* <CommentSection /> */}
-      {/* <ParentComponent /> */}
-      {/* <ToggleChceckbox /> */}
-      {/* <XssDemo/> */}
-      {/* <HOC/> */}
-      <Hooks />
+      <Practicals />
+      {/* <Hooks /> */}
+      <Basics />
     </>
   );
 }
