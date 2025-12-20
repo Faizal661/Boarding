@@ -1,12 +1,25 @@
-let num1=0;
-let num2=1;
-let limit= 10;
-let fibbo=[num1,num2]
-for(i=0;i<=limit;i++){
-    let value=num1+num2
-    fibbo.push(value)
-    num1=num2;
-    num2=value;
+// ======= Full Fibonacci upto 'n'
+
+function fibonacciUptoN(n){
+    const fib=[0,1];
+    for(let i=2;i<n;i++){
+        fib.push(fib[i-1]+fib[i-2])
+    }
+    return fib
 }
 
-console.log(fibbo)
+
+// ========== Only the 'N'th fibonacci
+
+function nthFibonacci(n){
+    const fib=[0,1];
+    for(let i=2;i<n;i++){
+        let ithFib=fib[0]+fib[1]
+        fib[0]=fib[1]
+        fib[1]=ithFib
+    }
+    return fib[1]
+}
+
+console.log(fibonacciUptoN(10))
+console.log(nthFibonacci(10))

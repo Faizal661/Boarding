@@ -1,0 +1,30 @@
+{
+  "root": {
+    "children": {
+      "a": {
+        "children": {
+          "p": { "children": { "p": { "children": {}, "isEnd": true } } }
+        }
+      },
+      "b": {
+        "children": {
+          "a": {
+            "children": {
+              "n": {
+                "children": {
+                  "a": {
+                    "children": {
+                      "n": {
+                        "children": { "a": { "children": {}, "isEnd": true } }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,8 +1,7 @@
-
 class TrieNode {
     constructor() {
         this.children = {};
-        this.isEnd = false;
+        this.isEnd;
     }
 }
 
@@ -26,39 +25,60 @@ class Trie {
         let current = this.root;
         for (const char of word) {
             if (!current.children[char]) {
-                return false;
+                return console.log(false)
             }
             current = current.children[char];
         }
-        return current.isEnd;
+        return console.log(current.isEnd)
     }
 
-    startsWith(prefix) {
+    startWith(word) {
         let current = this.root;
-        for (const char of prefix) {
+        for (const char of word) {
             if (!current.children[char]) {
-                return false;
+                return console.log('noo')
             }
-            current = current.children[char];
+            current = current.children[char]
         }
-        return true;
+        return console.log('yess')
     }
+
+    delete(word, index = 0, node = this.root) {
+        if (index === word.length) {
+            node.isEnd = false
+            return !Object.entries(node.children).length
+        }
+
+        let char = word[index]
+        let nextNode = node.children[char]
+
+        let deleteNext = this.delete(word, index + 1, nextNode)
+
+        if (deleteNext) {
+            delete node.children[char]
+            return !node.isEnd && !Object.entries(node.children).length
+        }
+    }
+
 }
 
 const trie = new Trie();
 
 trie.insert("apple");
 trie.insert("app");
-trie.insert("banana");  
+trie.insert("banana");
 
-// console.log("Words inserted: 'apple', 'app', 'banana'");
+trie.search('app')
+trie.search('apple')
+trie.search('applebanana')
+trie.search('banana')
 
-// console.log("Search for 'apple':", trie.search("apple"));  // true
-// console.log("Search for 'app':", trie.search("app"));      // true
-// console.log("Search for 'appl':", trie.search("appl"));    // false
+trie.startWith('ap')
+trie.startWith('appleee')
+trie.startWith('klkl')
 
-// console.log("Starts with 'app':", trie.startsWith("app"));  // true
-// console.log("Starts with 'ban':", trie.startsWith("ban"));  // true
-// console.log("Starts with 'bat':", trie.startsWith("bat"));  // false
 
-console.log(trie)
+trie.delete("apple");
+
+
+require('fs').writeFileSync('output.json', JSON.stringify(trie))
