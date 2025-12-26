@@ -20,3 +20,11 @@ child.stderr.on('data', (err) => {
 child.on('close', (code) => {
     console.log(`Child process exited with code ${code}`);
 });
+
+
+
+// fork communicating with this process
+process.on('message', (msg) => {
+    console.log('child received message',msg);
+    process.send({message:'message from child'})
+})

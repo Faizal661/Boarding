@@ -11,10 +11,11 @@ child.on('message', (message) => {
 
 child.send({ greeting: 'Hello from parent' });
 
-child.on('exit', (code) => {
-  console.log(`child process exited with code ${code}`);
-});
-
 child.on('error', (err) => {
   console.error('child encountered an error:', err);
+});
+
+
+child.on('exit', (code) => {
+  console.log(`child process exited with code ${code}`);
 });

@@ -13,11 +13,13 @@ class Timer extends EventEmitter {
         }
       }, 1000);
     }
+
   }
   
   const timer = new Timer();
   
   timer.on('tick', (count) => console.log(`Tick: ${count}`));
+  timer.on('tick', (count) => console.log('next tick ',count+1));
   timer.on('end', () => console.log('Timer finished!'));
   
   timer.start(5); 

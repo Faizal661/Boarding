@@ -1,0 +1,40 @@
+The Node.js event loop is a core mechanism that enables Node.js to perform non-blocking I/O operations and handle concurrency efficiently, despite being single-threaded. 
+It is powered by the libuv library, which provides cross-platform asynchronous I/O capabilities.
+
+
+Phases of the Event Loop: 
+    The event loop continuously cycles through a series of phases, each with specific tasks:
+
+Timers: 
+    Executes callbacks scheduled by setTimeout() and setInterval() that have met their time thresholds.
+Pending Callbacks:  
+    Executes callbacks for certain system operations, like TCP errors.
+Poll: 
+    This is the most crucial phase. It retrieves new I/O events (e.g., file reads, network requests) and executes their corresponding callbacks. If no I/O events are pending, it will wait for new events to arrive, or for timers to expire.
+Check:  
+    Executes callbacks scheduled by setImmediate().
+Close Callbacks:    
+    Executes callbacks for close events, such as when a socket or handle is closed.
+
+
+Microtask Queue:
+    In addition to the main phases, Node.js also has a microtask queue, 
+    which includes process.nextTick() callbacks and Promise callbacks. 
+    These microtasks are executed between the phases of the event loop, specifically after the current phase's tasks are completed and before moving to the next phase. 
+    process.nextTick() callbacks have higher priority than Promise callbacks.
+
+Non-Blocking I/O: 
+    When Node.js encounters an asynchronous operation (like reading a file or making a network request), 
+    it delegates the task to libuv and continues executing other JavaScript code. 
+    Once the asynchronous operation completes, libuv places the corresponding callback into the appropriate phase queue of the event loop.
+
+Single-Threaded Execution: 
+    While the event loop handles asynchronous operations, the actual JavaScript code execution remains single-threaded. 
+    This means that only one piece of JavaScript code runs at a time. 
+    If a synchronous operation takes a long time to complete (blocking the event loop), it will prevent other callbacks from being executed, leading to performance issues.
+
+Event-Driven Architecture: 
+    The event loop facilitates Node.js's event-driven architecture, 
+    where operations are initiated, and then callbacks are registered to be executed when those operations complete or when specific events occur.
+
+Event loop enables Node.js to manage numerous concurrent operations without resorting to traditional multi-threading, making it highly efficient for I/O-bound applications like web servers.

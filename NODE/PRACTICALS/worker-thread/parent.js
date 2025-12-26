@@ -2,7 +2,6 @@ import { Worker } from "worker_threads";
 
 const NUMBER_TO_CHECK = 1000000007;
 
-console.log("🚀 ~ NUMBER_TO_CHECK:", NUMBER_TO_CHECK)
 
 const worker = new Worker('./worker.js', {
     workerData: {
@@ -11,8 +10,7 @@ const worker = new Worker('./worker.js', {
 });
 
 worker.on('message', (result) => {
-    console.log(`\nMain: Worker finished processing.`);
-    console.log(`Main: Is ${result.number} prime? **${result.isPrime}**`);
+    console.log(` ${result.number} prime? ${result.isPrime}`);
 });
 
 worker.on('error', (err) => {

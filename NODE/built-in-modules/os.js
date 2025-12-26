@@ -10,3 +10,5 @@ console.log('Free Memory (bytes):', os.freemem());
 console.log('User Info:', os.userInfo());
 
 console.log(os.cpus());
+
+'✅❌😎'
