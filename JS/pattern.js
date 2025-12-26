@@ -1,12 +1,42 @@
 let n = 6;
 
 for (let i = 1; i <= n; i++) {
+  let str = ''
   for (let j = 1; j <= n - i; j++) {
-    console.log(' ');
+    str += ' '
   }
 
   for (let k = 1; k <= i; k++) {
-    console.log('*');
+    str += '*'
   }
-  console.log('\n');
+  console.log(str);
 }
+
+//      *
+//     **
+//    ***
+//   ****
+//  *****
+// ******
+
+
+
+for (let i = 1; i <= n; i++) {
+  let str = ''
+  for (let j = 1; j <= n - i; j++) {
+    str += ' '
+  }
+
+  for (let k = 1; k <= (i*2-1); k++) {
+    str += '*'
+  }
+  console.log(str);
+}
+
+//      *
+//     ***
+//    *****
+//   *******
+//  *********
+// ***********
+

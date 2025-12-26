@@ -10,5 +10,21 @@ console.log(merged);
 // console.log(deepCopy); // { name: 'Alice', details: { age: 30, city: 'Wonderland' } }
 
 
+const a = {
+    name: 'faizal',
+    age: 23
+}
 
-    
+Object.preventExtensions(a)
+
+a.age = 324
+delete a.name
+a.place = 'kerala'
+
+console.log(a)
+
+
+
+console.log(person)
+console.log(Object.hasOwn(person,'name'))
+console.log(Object.hasOwn(person,'password'))

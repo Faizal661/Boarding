@@ -1,4 +1,6 @@
-// Function composition => is a powerful technique in functional programming where you combine multiple functions to create a new, more complex function. It's like chaining functions together, where the output of one function becomes the input of the next.
+// Function composition => is a powerful technique in functional programming where you 
+// combine multiple functions to create a new, more complex function. It's like chaining 
+// functions together, where the output of one function becomes the input of the next.
 
 
 // Define individual functions

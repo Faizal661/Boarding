@@ -36,11 +36,9 @@ class WeightedGraph {
         this.addVertex(vertex1);
         this.addVertex(vertex2);
         this.adjacencyList[vertex1].push({ node: vertex2, weight });
-        // For an undirected graph, add the edge in both directions.
         this.adjacencyList[vertex2].push({ node: vertex1, weight });
     }
 
-    // Dijkstra's algorithm implementation
     dijkstra(start, finish) {
         const distances = {};
         const previous = {};

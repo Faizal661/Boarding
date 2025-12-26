@@ -22,6 +22,7 @@ class Graph{
     dfs(startNode,visited=new Set()){
         visited.add(startNode)
         console.log(startNode)
+
         for( let neighbour of this.list[startNode]){
             if(!visited.has(neighbour)){
                 this.dfs(neighbour,visited)
@@ -33,6 +34,7 @@ class Graph{
         console.log('-- bfs --')
         let queue=[startNode]
         visited.add(startNode)
+        
         while(queue.length>0){
             let curr=queue.shift()
             console.log(curr)

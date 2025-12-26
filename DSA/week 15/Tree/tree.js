@@ -15,25 +15,23 @@ nodeB.children.push(nodeD);
 nodeC.children.push(nodeE);
 
 function preOrderTraversal(node) {
-    if (node === null) {
-        return;
-    }
-    console.log(node.data);
-    for (const child of node.children) {
-        preOrderTraversal(child);
+    if (node) {
+        console.log(node.data);
+        for (const child of node.children) {
+            preOrderTraversal(child);
+        }
     }
 }
 console.log('Pre Order ')
 preOrderTraversal(root)
 
 function postOrderTraversal(node) {
-    if (node === null) {
-        return;
+    if (node) {
+        for (const child of node.children) {
+            postOrderTraversal(child);
+        }
+        console.log(node.data);
     }
-    for (const child of node.children) {
-        postOrderTraversal(child);
-    }
-    console.log(node.data);
 }
 console.log('Post Order ')
 postOrderTraversal(root)

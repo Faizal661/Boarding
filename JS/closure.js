@@ -1,10 +1,18 @@
-// A closure is a function combined with references to its surrounding state, also known as its lexical environment. In simpler terms, a closure allows a function to access its outer function's scope, even after the outer function has finished executing. This enables the inner function to "remember" and access variables from the environment in which it was created. 
+// A closure is a function combined with references to its surrounding state, also known as its 
+// lexical environment. In simpler terms, a closure allows a function to access its outer 
+// function's scope, even after the outer function has finished executing. This enables the 
+// inner function to "remember" and access variables from the environment in which it was created. 
 
-// Data privacy and encapsulation: Creating private variables and methods that are not directly accessible from the outside. This is often called the "Module pattern."
-// Function factories: Functions that create and return other, specialized functions. This is a core part of functional programming.
-// Currying and partial application: Transforming a function that takes multiple arguments into a sequence of functions, each taking a single argument.
-// Event handlers and callbacks: Capturing local variables for use in asynchronous operations like setTimeout, fetch, and event listeners.
-// Maintaining state: For tasks like creating unique IDs or implementing counters that persist across multiple function calls. 
+// Data privacy and encapsulation: Creating private variables and methods that are not directly 
+// accessible from the outside. This is often called the "Module pattern."
+// Function factories: Functions that create and return other, specialized functions. This is a 
+// core part of functional programming.
+// Currying and partial application: Transforming a function that takes multiple arguments into 
+// a sequence of functions, each taking a single argument.
+// Event handlers and callbacks: Capturing local variables for use in asynchronous operations 
+// like setTimeout, fetch, and event listeners.
+// Maintaining state: For tasks like creating unique IDs or implementing counters that persist 
+// across multiple function calls. 
 
 
 function outerFunction() {

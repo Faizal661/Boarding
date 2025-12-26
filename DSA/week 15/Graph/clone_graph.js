@@ -20,22 +20,18 @@ class Graph {
     }
 
     clone() {
-        const newGraph = new Graph()
+        let newGraph = new Graph()
 
         for (let vertex in this.list) {
+            newGraph.list[vertex] = new Set()
 
-            newGraph.addVertex(vertex)
-
-            for (let item of this.list[vertex]) {
-                newGraph.list[vertex].add(item)
+            for (let edges of this.list[vertex]) {
+                newGraph.list[vertex].add(edges)
             }
-
         }
 
         return newGraph
     }
-
-
 
 }
 
@@ -49,7 +45,7 @@ graph.addEdge("A", "C")
 graph.addEdge("D", "B")
 graph.addEdge("C", "B")
 
-const clonedGraph=graph.clone()
-clonedGraph.addEdge("B","A")
+const clonedGraph = graph.clone()
+clonedGraph.addEdge("B", "A")
 console.log(graph.list)
 console.log(clonedGraph.list)

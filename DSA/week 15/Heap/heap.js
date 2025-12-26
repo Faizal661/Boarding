@@ -16,9 +16,10 @@ class MinHeap {
     }
 
     heapifyUp(index) {
-        while (index > 0 && this.heap[index] < this.heap[this.getParentIndex(index)]) {
-            [this.heap[index], this.heap[this.getParentIndex(index)]] = [this.heap[this.getParentIndex(index)], this.heap[index]];
-            index = this.getParentIndex(index);
+        let parentIndex = this.getParentIndex(index)
+        if (index > 0 && this.heap[index] < this.heap[parentIndex]) {
+            [this.heap[index], this.heap[parentIndex]] = [this.heap[parentIndex], this.heap[index]];
+            this.heapifyUp(parentIndex)
         }
     }
 
@@ -50,7 +51,7 @@ class MinHeap {
         if (this.heap.length === 0) {
             return null;
         }
-        
+
         const min = this.heap[0];
         this.heap[0] = this.heap.pop();
         this.heapifyDown(0);

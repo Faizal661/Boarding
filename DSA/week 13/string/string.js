@@ -63,13 +63,14 @@ let contains = str.includes("world"); // Returns true
 // console.log(contains);
 
 let str1 = "The quick brown fox jumps over the lazy dog the the the the";
-let matches = str1.match(/the/g); // Returns ["fox", "fox"]
-// console.log(matches.length);
+let matches = str1.match(/the/); // Returns ["fox", "fox"]
+// console.log(matches);
 
 
 function replaceAlphabets(str, n) {
     const alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
     let result = "";
+    console.log('Input String:', str); 
     for (let i = 0; i < str.length; i++) {
         const char = str[i];
         const index = alphabet.indexOf(char);
@@ -80,9 +81,8 @@ function replaceAlphabets(str, n) {
             result += char;
         }
     }
-    return result;
+    console.log('Replaced String:', result); 
 }
 const inputString = "Good morning";
 const shift = 2;
-const outputString = replaceAlphabets(inputString, shift);
-console.log('Replaced String:', outputString); 
+replaceAlphabets(inputString, shift);

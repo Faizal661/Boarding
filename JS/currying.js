@@ -1,4 +1,5 @@
-// Currying transforms a function that takes multiple arguments into a sequence of functions that take one argument each.
+// Currying transforms a function that takes multiple arguments into a sequence of functions 
+// that take one argument each.
 
 function add(a) {
   console.log('a ' + a);

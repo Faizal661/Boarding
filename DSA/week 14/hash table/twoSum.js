@@ -12,7 +12,6 @@ var twoSum = function(nums, target) {
         }
         console.log(map)
     }
-    
 };
 
 nums=[8,3,4,4,2,7]
@@ -34,7 +33,6 @@ var twoSum = function (nums, target) {
         pairs[nums[i]] = i
         console.log(pairs)
     }
-    
     return output;
 };
 

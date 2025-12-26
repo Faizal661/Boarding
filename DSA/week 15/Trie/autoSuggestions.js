@@ -21,19 +21,6 @@ class Trie {
         current.isEnd = true
     }
 
-    displayAllwords(root = this.root, prev = '', result = []) {
-        let current = root
-        if (current.isEnd) {
-            result.push(prev)
-        }
-
-        for (let char in current.children) {
-            this.displayAllwords(current.children[char], prev + char, result)
-        }
-
-        return result
-    }
-
     suggestions(prefix) {
         let current = this.root
         for (let char of prefix) {
@@ -43,16 +30,16 @@ class Trie {
             current = current.children[char]
         }
 
-        return this._suggestionHelper(prefix, current, [])
+        return this._suggestionHelper(current, prefix, [])
     }
 
-    _suggestionHelper(currentPrefix, root, result = []) {
+    _suggestionHelper(root, currentPrefix, result = []) {
         if (root.isEnd) {
             result.push(currentPrefix)
         }
 
         for (let char in root.children) {
-            this._suggestionHelper(currentPrefix + char, root.children[char], result)
+            this._suggestionHelper(root.children[char], currentPrefix + char, result)
         }
 
         return result
@@ -65,7 +52,9 @@ const trie = new Trie()
 trie.insert('apple')
 trie.insert('application')
 trie.insert('approve')
-console.log(trie.displayAllwords())
+trie.insert('banana')
+trie.insert('cherry')
+console.log(trie.suggestions(''))
 console.log(trie.suggestions('appr'))
 
 
