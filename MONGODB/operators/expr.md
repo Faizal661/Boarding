@@ -49,16 +49,11 @@ Imagine a `products` collection with two fields: `currentStock` and `reorderThre
 ```javascript
 db.products.find({
   $expr: {
-    // Is the currentStock value strictly less than the reorderThreshold value?
     $lt: ["$currentStock", "$reorderThreshold"],
   },
 });
 ```
 
-**Explanation:**
-
-- `$lt` is the aggregation operator for "less than."
-- `["$currentStock", "$reorderThreshold"]` passes the values of the two fields to the `$lt` operator for comparison.
 - If `currentStock` is less than `reorderThreshold`, the `$expr` evaluates to `true`, and the document is matched.
 
 ---
@@ -94,14 +89,7 @@ db.sales.find({
 });
 ```
 
-**Explanation:**
 
-1.  The inner `$subtract` operator calculates the difference between the two fields (`$price - $cost`).
-2.  The outer `$gt` operator compares that calculated value to the static number `20`.
-
-This type of query would be impossible without using `$expr` because it requires both **calculation** (`$subtract`) and **comparison** (`$gt`) on fields within the same document during the query stage.
-
----
 
 ## Summary of `$expr`
 

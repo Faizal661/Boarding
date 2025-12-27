@@ -1,6 +1,6 @@
-Scaling in MongoDB is primarily achieved through two key architectural patterns: **Replication** and **Sharding**. Together, these methods allow MongoDB to handle large volumes of data (volume scaling) and high read/write traffic (throughput scaling) while maintaining high availability.
-
-Here is a detailed explanation of scaling in MongoDB:
+Scaling in MongoDB is primarily achieved through two key architectural patterns: **Replication** and **Sharding**. 
+Together, these methods allow MongoDB to handle large volumes of data (volume scaling) and 
+high read/write traffic (throughput scaling) while maintaining high availability.
 
 ---
 

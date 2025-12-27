@@ -48,23 +48,15 @@ Unwind in MongoDB
     ])
 
 
-$pop operator in MongoDB
-    db.tasks.updateMany(
-        { name: "Project A" },
-        { $pop: { tasks: 1 } } // Removes the last element
-    )
-
-
-
 
 $lookup in MongoDB 
     {
-    $lookup: {
-        from: "<foreignCollection>",
-        localField: "<localField>",
-        foreignField: "<foreignField>",
-        as: "<outputArray>"
-    }
+        $lookup: {
+            from: "<foreignCollection>",
+            localField: "<localField>",
+            foreignField: "<foreignField>",
+            as: "<outputArray>"
+        }
     }
 
 
@@ -82,17 +74,14 @@ $facet
 
 bulkWrite 
 db.products.bulkWrite([
-  // Insert a new product
   { insertOne: { document: { name: "Laptop", category: "Electronics", price: 1000 } } },
 
-  // Update the price of a product
   { updateOne: { 
       filter: { name: "Laptop" }, 
       update: { $set: { price: 1200 } } 
     }
   },
 
-  // Delete a product
   { deleteOne: { filter: { name: "Old Phone" } } }
 ]);
 

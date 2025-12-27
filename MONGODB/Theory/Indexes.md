@@ -1,4 +1,10 @@
-Indexes in MongoDB are special data structures that store a small portion of the dataset in a form that's easy to traverse. They improve the speed of query operations by providing efficient ways to locate and access data. Without indexes, MongoDB must perform a collection scan to find matching documents, which can be slow for large datasets.
+Indexes in MongoDB are special data structures that store a small portion of the dataset in a form that's easy to traverse. 
+They improve the speed of query operations by providing efficient ways to locate and access data. 
+Without indexes, MongoDB must perform a collection scan to find matching documents, which can be slow for large datasets.
+
+Cons :
+- Each index consumes storage 
+- Slows down write operations.
 
 Types of Indexes
 
