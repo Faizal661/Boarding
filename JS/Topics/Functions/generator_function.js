@@ -1,3 +1,5 @@
+// Declared with function*, these can pause execution using the yield keyword and resume later
+
 function* counter(){
     let count=0
     while(count<5){
