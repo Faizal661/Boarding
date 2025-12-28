@@ -1,6 +1,6 @@
 import { spawn } from "child_process";
 
-const child = spawn('node', ['NODE/PRACTICALS/child-process-1-to-10-print/child-file.js'])
+const child = spawn('node', ['./child-file.js'])
 
 child.stdout.on('data',(data)=>{
     console.log(data.toString())
