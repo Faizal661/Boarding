@@ -9,7 +9,7 @@ Array operator in MongoDB
 
     db.products.updateOne(
         { _id: 101 },
-        { $pull: { colors: "red" } }
+        { $pull: { colors: "red" } }   // remove all instances of 'red'
     )
 
     db.users.updateOne(
